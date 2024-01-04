@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 "use client";
 import { urlFor } from "@/lib/sanityClient";
 import Image from "next/image";
@@ -110,7 +110,7 @@ const Banner = ({ banners }: any) => {
     <div>
       <Slider {...settings}>
         {banners?.map((item: any) => (
-          <Link href={"/shop"} className="relative">
+          <Link href={"/shop"} as={`/shop/${item.id}`} key={item.id} className="relative">
             <Image
               src={urlFor(item.image).url()}
               alt="banner image"

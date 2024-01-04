@@ -15,7 +15,7 @@ const YearProduct = () => {
         />
         <div className="w-full md:w-2/3 xl:w-1/2 h-80 absolute px-4 md:px-0 top-0 right-0 flex flex-col items-start gap-6 justify-center">
           <h1 className="text-3xl font-semibold text-primeColor">
-            Prouct of the year
+            Proizvod godine
           </h1>
           <p className="text-base font-normal text-primeColor max-w-[600px] mr-4">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. At,
@@ -26,7 +26,7 @@ const YearProduct = () => {
             href={"/shop"}
             className="bg-primeColor text-white text-lg w-[185px] h-[50px] hover:bg-black duration-300 font-bold flex items-center justify-center rounded-md"
           >
-            Shop Now
+            Kupi
           </Link>
         </div>
       </Container>
