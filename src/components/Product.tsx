@@ -25,7 +25,7 @@ const Product = ({ product, bg }: Props) => {
               className="w-72 h-72 object-contain"
             />
           </Link>
-          <div className="abosute bottom-0 flex items-center gap-5 justify-center translate-y-[110%] group-hover:-translate-y-2 transition-transform duration-300">
+          <div className="absolute bottom-0 flex items-center gap-5 justify-center translate-y-[110%] group-hover:-translate-y-2 transition-transform duration-300">
             <Link
               href={"/"}
               className="bg-gray-800 text-gray-200 px-4 py-2 text-xs rounded-full flex items-center gap-1 hover:bg-gray-950 hover:text-white duration-200"
@@ -63,7 +63,7 @@ const Product = ({ product, bg }: Props) => {
             <p className="text-[#767676] text-xs line-through">
               ${product?.rowprice}
             </p>
-            <p className="font-semibold">${product?.price}</p>
+            <p className="font-semibold">€{product?.price}</p>
           </div>
         </div>
         <div className="flex items-center justify-between">

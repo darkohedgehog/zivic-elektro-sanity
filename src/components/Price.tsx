@@ -4,7 +4,7 @@ interface Props {
   }
   
   const Price = ({ amount, className }: Props) => {
-    const priceFormat = new Number(amount).toLocaleString("en-HR", {
+    const priceFormat = new Number(amount).toLocaleString("hr", {
       style: "currency",
       currency: "EUR",
       maximumFractionDigits: 2,
