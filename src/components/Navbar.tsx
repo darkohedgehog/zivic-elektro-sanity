@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/logoBlack.png";
+import logo from "@/assets/logo_transparent.png";
 import { FaSearch } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
 import { HiMenuAlt2 } from "react-icons/hi";

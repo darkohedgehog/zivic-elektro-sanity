@@ -9,8 +9,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
   basePath: "/studio",
-  name: "OREBI_Shopping",
-  title: "OREBI online shopping",
+  name: "Zivic-Elektro",
+  title: "Zivic-Elektro materijal",
   projectId,
   dataset,
   plugins: [deskTool(), visionTool()],
