@@ -8,6 +8,7 @@ export interface ProductProps {
     title: string;
     position: string;
     ratings: number;
+    sku: string;
     description: string;
     brand: string;
     slug: {

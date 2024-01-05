@@ -8,7 +8,7 @@ interface Props {
 const ProductInfo = ({ product }: Props) => {
   return (
     <div className="flex flex-col gap-5">
-      <h2 className="text-4xl font-semibold">{product?.title}</h2>
+      <h2 className="text-xl font-semibold">{product?.title}</h2>
       <div className="flex items-center gap-4">
         <p className="text-lg font-normal text-gray-500 line-through">
           <Price amount={product?.rowprice} />
@@ -30,12 +30,8 @@ const ProductInfo = ({ product }: Props) => {
       </p>
       <p className="text-sm text-gray-500">Be the first to leave a review.</p>
       <button className="w-full py-4 bg-primeColor hover:bg-black duration-300 text-white text-lg rounded-md">
-        Add to Cart
+        Dodaj u košaricu
       </button>
-      <p className="font-normal text-sm">
-        <span className="text-base font-medium">Categories:</span> Spring
-        collection, Streetwear, Women Tags: featured SKU: N/A
-      </p>
     </div>
   );
 };

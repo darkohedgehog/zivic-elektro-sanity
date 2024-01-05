@@ -10,7 +10,6 @@ export default defineType({
       title: "Title",
       type: "string",
       description: "Keep the title relative to product",
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "slug",
@@ -26,6 +25,12 @@ export default defineType({
       name: "description",
       title: "Description",
       type: "string",
+    }),
+    defineField({
+      name: "SKU",
+      title: "SKU",
+      type: "string",
+      validation: (rule) => rule.required(),
     }),
 
     defineField({

@@ -106,11 +106,17 @@ const Banner = ({ banners }: any) => {
       },
     ],
   };
+
+  //Each child in a list should have a unique "key" prop
+  const generateKey = (banner: { id: number; }) => {
+    return new Date().getTime() + banner.id;
+  };
+  
   return (
     <div>
       <Slider {...settings}>
         {banners?.map((item: any) => (
-          <Link href={"/shop"} as={`/shop/${item.id}`} key={item.id} className="relative">
+          <Link href={"/shop"} as={`/shop/${item.id}`} key={generateKey(item)} className="relative">
             <Image
               src={urlFor(item.image).url()}
               alt="banner image"
