@@ -33,7 +33,7 @@ const Product = ({ product, bg }: Props) => {
               <span>
                 <AiOutlineShopping />
               </span>
-              Add to bag
+              U košaricu
             </Link>
             <Link
               href={"/"}
@@ -42,13 +42,13 @@ const Product = ({ product, bg }: Props) => {
               <span>
                 <BsArrowsFullscreen />
               </span>
-              Quick view
+              Pregled
             </Link>
           </div>
           {product?.isnew && (
             <div className="absolute top-2 right-2 z-50">
               <p className="bg-primeColor px-4 py-1 text-white flex justify-center items-center text-sm font-semibold hover:bg-black duration-300 cursor-pointer rounded-md">
-                New
+                Novo
               </p>
             </div>
           )}
@@ -57,7 +57,7 @@ const Product = ({ product, bg }: Props) => {
       <div className="max-w-80 py-6 flex flex-col gap-1 px-4">
         <div className="flex items-center justify-between">
           <h2 className="text-lg text-primeColor font-bold">
-            {product?.title.substring(0, 15)}
+            {product?.title.substring(0, 18)}
           </h2>
           <div className="flex items-center gap-2">
             <p className="text-[#767676] text-xs line-through">
@@ -68,7 +68,7 @@ const Product = ({ product, bg }: Props) => {
         </div>
         <div className="flex items-center justify-between">
           <p className="text-[#767676] text-sm">
-            a product by{" "}
+            proizvodi{" "}
             <span className="font-semibold text-primeColor">
               {product?.brand}
             </span>

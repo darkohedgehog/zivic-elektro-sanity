@@ -37,7 +37,7 @@ const ListProduct = ({ product, bg }: Props) => {
         {product?.isnew && (
           <div className="absolute top-2 right-2 z-50">
             <p className="bg-primeColor px-4 py-1 text-white flex justify-center items-center text-sm font-semibold hover:bg-black duration-300 cursor-pointer rounded-md">
-              New
+              Novo
             </p>
           </div>
         )}
@@ -45,7 +45,7 @@ const ListProduct = ({ product, bg }: Props) => {
       <div className="py-6 flex flex-col gap-5 px-4">
         <div className="flex items-center justify-between">
           <h2 className="text-lg text-primeColor font-bold">
-            {product?.title.substring(0, 15)}
+            {product?.title.substring(0, 35)}
           </h2>
         </div>
         <div className="flex items-center gap-2">
@@ -57,7 +57,7 @@ const ListProduct = ({ product, bg }: Props) => {
         <p className="text-sm max-w-2xl">{product?.description}</p>
         <div className="flex items-center justify-between">
           <p className="text-[#767676] text-[14px]">
-            a product by{" "}
+            proizvodi{" "}
             <span className="font-semibold text-primeColor">
               {product?.brand}
             </span>
@@ -72,7 +72,7 @@ const ListProduct = ({ product, bg }: Props) => {
             <span className="text-sm mb-1">
               <AiOutlineShopping />
             </span>{" "}
-            Add to bag
+            U košaricu
           </button>
           <Link
             href={{
@@ -83,7 +83,7 @@ const ListProduct = ({ product, bg }: Props) => {
             <span className="text-xs mb-1">
               <BsArrowsFullscreen />
             </span>{" "}
-            Quick view
+            Pregled
           </Link>
         </div>
       </div>

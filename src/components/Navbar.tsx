@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/logo_transparent.png";
+import logo from "@/assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
 import { HiMenuAlt2 } from "react-icons/hi";
@@ -14,19 +14,19 @@ const Navbar = () => {
 
   const navBarList = [
     {
-      title: "Home",
+      title: "Naslovna",
       link: "/",
     },
     {
-      title: "Shop",
+      title: "Proizvodi",
       link: "/shop",
     },
     {
-      title: "Cart",
+      title: "Košarica",
       link: "/cart",
     },
     {
-      title: "Profile",
+      title: "Profil",
       link: "/profile",
     },
     {
@@ -43,7 +43,7 @@ const Navbar = () => {
         <div className="relative w-full hidden lg:inline-flex lg:w-[600px] h-10 text-base text-primeColor border-[1px] border-black items-center gap-2 justify-between px-6 rounded-md">
           <input
             type="text"
-            placeholder="Search your products here"
+            placeholder="Pretraži proizvode"
             className="flex-1 h-full outline-none bg-transparent placeholder:text-gray-600"
             onChange={(e) => setSearchQuery(e.target.value)}
             value={searchQuery}
