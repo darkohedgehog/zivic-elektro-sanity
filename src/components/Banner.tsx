@@ -122,6 +122,7 @@ const Banner = ({ banners }: any) => {
               alt="banner image"
               width={2000}
               height={2000}
+              priority
               className="w-full max-h-[650px] object-cover"
             />
             <div className="w-full h-40 bg-gradient-to-t from-gray-100 to-transparent absolute bottom-0 z-20" />

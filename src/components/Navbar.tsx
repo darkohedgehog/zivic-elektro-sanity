@@ -7,10 +7,12 @@ import { IoCloseOutline } from "react-icons/io5";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [searchQuery, setSearchQuery] = useState("");
+  const { data: session } = useSession();
 
   const navBarList = [
     {
@@ -43,7 +45,7 @@ const Navbar = () => {
         <div className="relative w-full hidden lg:inline-flex lg:w-[600px] h-10 text-base text-primeColor border-[1px] border-black items-center gap-2 justify-between px-6 rounded-md">
           <input
             type="text"
-            placeholder="Pretraži proizvode"
+            placeholder="Search your products here"
             className="flex-1 h-full outline-none bg-transparent placeholder:text-gray-600"
             onChange={(e) => setSearchQuery(e.target.value)}
             value={searchQuery}
@@ -69,11 +71,19 @@ const Navbar = () => {
               {item?.title}
             </Link>
           ))}
-        </div>
-        <HiMenuAlt2 className="inline-flex md:hidden cursor-pointer w-8 h-6" />
-      </nav>
-    </div>
-  );
-};
+          {session?.user && (
+            <button
+              onClick={() => signOut()}
+              className="flex hover:font-medium w-20 h-6 justify-center items-center px-12 text-gray-500 hover:underline underline-offset-4 decoration-[1px] hover:text-red-600 md:border-r-[2px] border-r-gray-300 duration-200 last:border-r-0"
+            >
+              Logout
+            </button>
+             )}
+             </div>
+             <HiMenuAlt2 className="inline-flex md:hidden cursor-pointer w-8 h-6" />
+           </nav>
+         </div>
+       );
+     };
 
 export default Navbar;

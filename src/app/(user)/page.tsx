@@ -34,9 +34,9 @@ const HomePage = async () => {
       <Banner banners={banners} />
       <NewArrival products={newArrivalProducts} />
       <HomeBanner />
-      <BestSellers products={bestSellersProducts} title="Our Bestsellers" />
+      <BestSellers products={bestSellersProducts} title="Najprodavaniji proizvodi" />
       <YearProduct />
-      <BestSellers products={specialOffersProducts} title="Special Offers" />
+      <BestSellers products={specialOffersProducts} title="Posebne ponude" />
     </main>
   );
 };
