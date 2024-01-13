@@ -45,7 +45,7 @@ const PageButton = () => {
             <MdSwitchAccount className="text-2xl -translate-x-3 group-hover:translate-x-12 transition-transform duration-200" />
           )}
         </div>
-        <p className="text-xs font-semibold">Profile</p>
+        <p className="text-xs font-semibold">Profil</p>
       </button>
       <Link
         href={"/cart"}
@@ -55,7 +55,7 @@ const PageButton = () => {
           <RiShoppingCart2Fill className="text-2xl -translate-x-12 group-hover:translate-x-3 transition-transform duration-200" />
           <RiShoppingCart2Fill className="text-2xl -translate-x-3 group-hover:translate-x-12 transition-transform duration-200" />
         </div>
-        <p className="text-xs font-semibold">Buy Now</p>
+        <p className="text-xs font-semibold">Kupi</p>
         <p className="absolute top-1 right-2 bg-primeColor text-white text-xs w-4 h-4 rounded-full flex items-center justify-center font-semibold">
           {productData ? productData?.length : 0}
         </p>

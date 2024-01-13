@@ -28,7 +28,7 @@ const ShopPage = () => {
   return (
     <Container>
       <div className="flex items-center justify-between pb-10">
-        <h2 className="text-2xl text-primeColor font-bold">All Products</h2>
+        <h2 className="text-2xl text-primeColor font-bold">Svi proizvodi</h2>
         <div className="flex items-center gap-4">
           <span
             onClick={() => {

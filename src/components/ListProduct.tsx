@@ -31,6 +31,7 @@ const ListProduct = ({ product, bg }: Props) => {
               width={700}
               height={700}
               alt="demo image"
+              priority
             />
           </Link>
         </div>

@@ -36,7 +36,7 @@ const Product = ({ product, bg }: Props) => {
               onClick={() => {
                 dispatch(addToCart(product));
                 toast.success(
-                  `${product?.title.substring(0, 15)}... added to cart`
+                  `${product?.title.substring(0, 20)}... added to cart`
                 );
               }}
               className="bg-gray-800 text-gray-200 px-4 py-2 text-xs rounded-full flex items-center gap-1 hover:bg-gray-950 hover:text-white duration-200"
@@ -59,7 +59,7 @@ const Product = ({ product, bg }: Props) => {
           {product?.isnew && (
             <div className="absolute top-2 right-2 z-50">
               <p className="bg-primeColor px-4 py-1 text-white flex justify-center items-center text-sm font-semibold hover:bg-black duration-300 cursor-pointer rounded-md">
-                New
+                Novo
               </p>
             </div>
           )}
@@ -68,18 +68,18 @@ const Product = ({ product, bg }: Props) => {
       <div className="max-w-80 py-6 flex flex-col gap-1 px-4">
         <div className="flex items-center justify-between">
           <h2 className="text-lg text-primeColor font-bold">
-            {product?.title.substring(0, 15)}
+            {product?.title.substring(0, 18)}
           </h2>
           <div className="flex items-center gap-2">
             <p className="text-[#767676] text-xs line-through">
-              ${product?.rowprice}
+              €{product?.rowprice}
             </p>
-            <p className="font-semibold">${product?.price}</p>
+            <p className="font-semibold">€{product?.price}</p>
           </div>
         </div>
         <div className="flex items-center justify-between">
           <p className="text-[#767676] text-sm">
-            a product by{" "}
+            proizvođač{" "}
             <span className="font-semibold text-primeColor">
               {product?.brand}
             </span>

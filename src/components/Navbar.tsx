@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className="relative w-full hidden lg:inline-flex lg:w-[600px] h-10 text-base text-primeColor border-[1px] border-black items-center gap-2 justify-between px-6 rounded-md">
           <input
             type="text"
-            placeholder="Search your products here"
+            placeholder="Pretraži proizvode"
             className="flex-1 h-full outline-none bg-transparent placeholder:text-gray-600"
             onChange={(e) => setSearchQuery(e.target.value)}
             value={searchQuery}

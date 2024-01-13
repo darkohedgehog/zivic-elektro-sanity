@@ -10,7 +10,7 @@ const initialState: StoreState = {
 };
 
 export const elektroSlice = createSlice({
-  name: "elektro",
+  name: "zivic-elektro",
   initialState,
   reducers: {
     addToCart: (state, action) => {
