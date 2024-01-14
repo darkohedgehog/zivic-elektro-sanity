@@ -65,10 +65,10 @@ const Cart = () => {
       {productData?.length > 0 ? (
         <div className="pb-20">
           <div className="w-full h-20 bg-[#f5f7f7] text-primeColor hidden lg:grid grid-cols-5 place-content-center px-6 text-lg font-semibold">
-            <h2 className="col-span-2">Product</h2>
-            <h2>Price</h2>
-            <h2>Quantity</h2>
-            <h2>Sub Total</h2>
+            <h2 className="col-span-2">Proizvod</h2>
+            <h2>Cijena</h2>
+            <h2>Količina</h2>
+            <h2>Ukupno</h2>
           </div>
           <div className="mt-5">
             {productData.map((item) => (
