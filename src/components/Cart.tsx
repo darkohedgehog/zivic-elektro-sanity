@@ -18,6 +18,8 @@ const Cart = () => {
   const { productData } = useSelector((state: StateProps) => state.elektro);
   const dispatch = useDispatch();
   const [totalAmt, setTotalAmt] = useState(0);
+  const [shippingCharge, setShippingCharge] = useState(4); // Postavite željeni iznos troškova dostave
+
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -26,8 +28,9 @@ const Cart = () => {
       price += item?.price * item?.quantity;
       return price;
     });
-    setTotalAmt(price);
-  }, [productData]);
+    setTotalAmt(price + shippingCharge); // Dodajte troškove dostave
+  }, [productData, shippingCharge]);
+  
 
   const handleReset = () => {
     const confirmed = window.confirm("Are you sure to reset your Cart?");
@@ -49,6 +52,7 @@ const Cart = () => {
         body: JSON.stringify({
           items: productData,
           email: session?.user?.email,
+          shippingCharge: shippingCharge,
         }),
       });
       const data = await response.json();
@@ -107,7 +111,7 @@ const Cart = () => {
                 <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
                   Shipping Charge
                   <span className="font-semibold tracking-wide font-titleFont">
-                    <Price amount={0} />
+                    <Price amount={shippingCharge} />
                   </span>
                 </p>
                 <p className="flex items-center justify-between border-[1px] border-gray-400 py-1.5 text-lg px-4 font-medium">
