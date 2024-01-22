@@ -10,7 +10,7 @@ export const POST = async (request: NextRequest) => {
     const reqBody = await request.json();
     const { items, email } = await reqBody;
 
-    const updatedItems = await items.map((item: ProductProps) => ({
+    const updatedItems = items.map((item: ProductProps) => ({
       quantity: item.quantity,
       price_data: {
         currency: "eur",
@@ -22,6 +22,20 @@ export const POST = async (request: NextRequest) => {
         },
       },
     }));
+
+    // Dodajte ovdje troškove dostave
+    const shippingCost = 400; // Na primer, 4 eura za dostavu
+    updatedItems.push({
+      quantity: 1,
+      price_data: {
+        currency: "eur",
+        unit_amount: shippingCost, // U centima
+        product_data: {
+          name: "Troškovi dostave",
+          description: "Cijena za dostavu proizvoda",
+        },
+      },
+    });
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
