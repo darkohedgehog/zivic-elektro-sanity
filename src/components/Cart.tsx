@@ -112,6 +112,7 @@ const Cart = () => {
           items: productData,
           email: session?.user?.email,
           shippingCharge: shippingCharge,
+          discount: discount,
         }),
       });
       const data = await response.json();

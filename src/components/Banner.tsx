@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Slider from "react-slick";
+import InfoBanner from "./InfoBanner";
 
 const Banner = ({ banners }: any) => {
   const [dotActive, setDocActive] = useState(0);
@@ -129,6 +130,7 @@ const Banner = ({ banners }: any) => {
           </Link>
         ))}
       </Slider>
+      <InfoBanner />
     </div>
   );
 };
