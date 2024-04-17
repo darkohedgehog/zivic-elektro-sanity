@@ -29,3 +29,26 @@ export const products = async () => {
   const productData = await client.fetch(productQuery);
   return productData;
 };
+
+export async function getOrderData(orderId: any) {
+  const query = `*[_type == "order" && _id == $orderId][0]{
+    customer->{
+      firstName,
+      lastName,
+      email,
+      phone,
+      address
+    },
+    products[]->{
+      title,
+      price
+    },
+    total,
+    paymentMethod,
+    status,
+    orderDate
+  }`;
+
+  const order = await client.fetch(query, { orderId });
+  return order;
+}

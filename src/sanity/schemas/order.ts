@@ -1,39 +1,57 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: "order",
-  title: "Order",
-  type: "document",
+  name: 'order',
+  type: 'document',
+  title: 'Order',
   fields: [
-    defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
-    }),
-    defineField({
-      name: "description",
-      title: "Description",
-      type: "string",
-    }),
-    defineField({
-      name: "message",
-      title: "Message",
-      type: "string",
-    }),
-    defineField({
-      name: "status",
-      title: "Status",
-      type: "string",
-    }),
-    defineField({
-      name: "method",
-      title: "Confirmation method",
-      type: "string",
-    }),
-    defineField({
-      name: "amount",
-      title: "Amount",
-      type: "number",
-    }),
-  ],
+    {
+      name: 'customer',
+      type: 'reference',
+      to: [{type: 'customer'}],
+      title: 'Customer'
+    },
+    {
+      name: 'products',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'product'}]}],
+      title: 'Products'
+    },
+    {
+      name: 'total',
+      type: 'number',
+      title: 'Total Amount'
+    },
+    {
+      name: 'paymentMethod',
+      type: 'string',
+      title: 'Payment Method',
+      options: {
+        list: [
+          {title: 'Stripe', value: 'stripe'},
+          {title: 'Cash on Delivery', value: 'cashOnDelivery'},
+          {title: 'Direct Bank Transfer', value: 'directBankTransfer'}
+        ],
+      },
+    },
+    {
+      name: 'status',
+      type: 'string',
+      title: 'Status',
+      options: {
+        list: [
+          {title: 'Pending', value: 'pending'},
+          {title: 'Paid', value: 'paid'},
+          {title: 'Shipped', value: 'shipped'},
+          {title: 'Delivered', value: 'delivered'},
+          {title: 'Cancelled', value: 'cancelled'}
+        ],
+      },
+    },
+    {
+      name: 'orderDate',
+      type: 'datetime',
+      title: 'Order Date'
+    },
+  ]
 });
